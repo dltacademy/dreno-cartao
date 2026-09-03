@@ -228,3 +228,55 @@
   color: var(--green);
   font-weight: 700;
 }
+
+/* Mini-Simulador ATM / Saque ARQ */
+.atm-box {
+  background: rgba(10, 17, 32, 0.95);
+  border: 1px solid rgba(74, 141, 248, 0.25);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin: 12px 0 14px;
+}
+
+.atm-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.atm-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 8px;
+  text-align: center;
+}
+
+.atm-stat {
+  background: var(--bg-elev-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+
+.atm-stat-val {
+  font-family: var(--font-head);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.atm-stat-label {
+  font-size: 11px;
+  color: var(--text-dim);
+  margin-top: 2px;
+}
+
+.atm-link {
+  display: inline-block;
+  font-size: 12.5px;
+  margin-top: 8px;
+  color: var(--accent);
+}
