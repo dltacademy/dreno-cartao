@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O Dreno do Cartão no Exterior — Calculadora de Custo Real</title>
+<meta name="description" content="Calcule o sangramento invisível de IOF (4,38%), spread cambial e DCC na sua viagem e descubra o setup real de menor custo líquido.">
+<meta name="robots" content="noindex">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://gc.zgo.at; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self' https://*.goatcounter.com; object-src 'none'; frame-src 'none'; worker-src 'none'; base-uri 'none'; form-action 'self'; upgrade-insecure-requests">
+<link rel="canonical" href="https://dreno-cartao.dlt.academy/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DLT Academy">
+<meta property="og:title" content="O Dreno do Cartão no Exterior — Calculadora de Custo Real">
+<meta property="og:description" content="Calcule o sangramento invisível de IOF e spread cambial nas suas viagens e descubra como estancar as perdas.">
+<meta property="og:url" content="https://dreno-cartao.dlt.academy/">
+<meta property="og:image" content="https://dreno-cartao.dlt.academy/og-image.svg">
+<meta property="og:image:type" content="image/svg+xml">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="O Dreno do Cartão no Exterior — ferramenta gratuita da DLT Academy">
+<meta property="og:locale" content="pt_BR">
+
+<!-- Twitter/X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="O Dreno do Cartão no Exterior — Calculadora de Custo Real">
+<meta name="twitter:description" content="Calcule o sangramento invisível de IOF e spread cambial nas suas viagens e descubra como estancar as perdas.">
+<meta name="twitter:image" content="https://dreno-cartao.dlt.academy/og-image.svg">
+<meta name="twitter:image:alt" content="O Dreno do Cartão no Exterior — ferramenta gratuita da DLT Academy">
+
+<meta name="theme-color" content="#06090F">
+<link rel="icon" type="image/png" href="assets/dlt-mark.png">
+<link rel="stylesheet" href="styles-base.css">
+<link rel="stylesheet" href="styles-tool.css">
+<link rel="stylesheet" href="dlt-patterns.css">
+
+<!-- Dados estruturados JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "O Dreno do Cartão no Exterior",
+  "description": "Calculadora educacional de custos cambiais invisíveis (IOF, spread e taxas de transação) em viagens internacionais, comparando métodos tradicionais com o setup real de nômades digitais.",
+  "url": "https://dreno-cartao.dlt.academy/",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "inLanguage": "pt-BR",
+  "isAccessibleForFree": true,
+  "image": "https://dreno-cartao.dlt.academy/og-image.svg",
+  "offers": { "@type": "Offer", "price": 0, "priceCurrency": "BRL" },
+  "publisher": { "@type": "Organization", "name": "DLT Academy", "url": "https://dlt.academy/" }
+}
+</script>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="https://dlt.academy/"><img src="assets/dlt-logo-light.png" alt="DLT Academy"></a>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap">
+
+    <section class="hero">
+      <span class="disclaimer-badge">⚠️ Ferramenta Educacional — Testada em Campo</span>
+      <h1 id="headline">Quanto o seu banco come em <span class="highlight">taxas invisíveis</span> no exterior?</h1>
+      <p class="subtitle" id="subheadline">Descubra o sangramento real de IOF (4,38%), spread cambial e taxas ocultas na sua próxima viagem e veja o setup de menor custo líquido testado na estrada.</p>
+
+      <!-- CARD 1: INPUTS DO USUÁRIO -->
+      <div class="card">
+        <h2><span class="num">1</span>Simule o gasto da sua viagem</h2>
+        <p class="section-desc">Selecione o destino, informe quanto pretende gastar e escolha seu método de pagamento habitual.</p>
+
+        <div class="control-grid">
+          <!-- Destino -->
+          <div class="control">
+            <span class="control-label"><strong>Destino da Viagem:</strong></span>
+            <div class="pill-group">
+              <div class="pill-btn pill-destino active" data-destino="asia">🌏 Sudeste Asiático</div>
+              <div class="pill-btn pill-destino" data-destino="europa">🏛️ Europa</div>
+              <div class="pill-btn pill-destino" data-destino="eua">🗽 Estados Unidos</div>
+              <div class="pill-btn pill-destino" data-destino="global">✈️ Outro / Global</div>
+            </div>
+          </div>
+
+          <!-- Gasto em Reais -->
+          <div class="control">
+            <div class="control-label">
+              <strong>Orçamento Estimado (BRL):</strong>
+              <span>Arraste ou digite</span>
+            </div>
+            <div class="currency-input-wrap">
+              <span class="currency-symbol">R$</span>
+              <input type="number" id="gasto-input" class="currency-field" value="10000" min="1000" max="100000" step="500">
+            </div>
+            <input type="range" id="gasto-slider" min="1000" max="50000" step="500" value="10000">
+          </div>
+
+          <!-- Meio de pagamento atual -->
+          <div class="control">
+            <span class="control-label"><strong>Como você costuma pagar no exterior hoje?</strong></span>
+            <div class="pill-group">
+              <div class="pill-btn pill-metodo active" data-metodo="bancao">💳 Cartão Bancão (Itaú, Nubank...)</div>
+              <div class="pill-btn pill-metodo" data-metodo="fintech">🌍 Fintech Global (Wise, Nomad...)</div>
+              <div class="pill-btn pill-metodo" data-metodo="especie">💵 Dinheiro de Casa de Câmbio</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 2: DIAGNÓSTICO DO SANGRAMENTO -->
+      <div class="card">
+        <h2><span class="num">2</span>O Sangramento Invisível Detectado</h2>
+        <p class="section-desc">O valor abaixo é o que você deixa no bolso de intermediários e bancos sem perceber.</p>
+
+        <div class="bleed-highlight-card">
+          <div class="bleed-label">Total Sangrado em Tarifas e Spreads</div>
+          <div class="bleed-val" id="bleed-val">R$ 938,00</div>
+          <div class="stat-label">Valor calculado sobre a modalidade selecionada</div>
+
+          <div class="lifestyle-impact-box">
+            <div class="lifestyle-icon">🍜</div>
+            <div class="lifestyle-text" id="lifestyle-text">
+              Esse dinheiro perdido em tarifas pagaria aproximadamente <strong>11 noites de hospedagem</strong> ou cerca de <strong>62 refeições completas</strong> no Sudeste Asiático.
+            </div>
+          </div>
+        </div>
+
+        <table class="breakdown-table">
+          <thead>
+            <tr>
+              <th>Modalidade</th>
+              <th>Custo Total Estimado</th>
+              <th>Alíquota Efetiva</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="table-metodo-name">Cartão de Crédito Bancão Nacional</td>
+              <td id="table-metodo-cost" class="val-bad">R$ 938,00</td>
+              <td id="table-metodo-rate">~9,4% do valor gasto</td>
+            </tr>
+            <tr>
+              <td>Setup Web3 (ether.fi Cash)</td>
+              <td class="val-good">Custo Líquido Negativo</td>
+              <td>0% IOF + até 3% Cashback</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- CARD 3: A HIERARQUIA REAL DO VIAJANTE (O SETUP DO OPERADOR) -->
+      <div class="card">
+        <h2><span class="num">3</span>O Setup Real de Pagamentos (Hierarquia Testada na Estrada)</h2>
+        <p class="section-desc">Como viajar o mundo sem pagar pedágio bancário abusivo, seguindo a ordem prática de menor custo líquido:</p>
+
+        <div class="setup-hierarchy-grid">
+          <!-- 1ª LINHA: ETHER.FI CASH -->
+          <div class="tier-card tier-primary">
+            <span class="tier-badge badge-gold">🥇 1ª Opção — Onde aceitar cartão</span>
+            <h3 class="tier-title">ether.fi Cash (Cartão Visa Web3 On-Chain)</h3>
+            <p class="tier-desc">Pague suas despesas do dia a dia (hotéis, restaurantes, compras) usando saldo em dólar digital (USDC) direto na rede. Sem IOF bancário brasileiro (4,38%) e com cashback progressivo.</p>
+            <div class="tier-gain">
+              💰 Economia líquida projetada: <span id="etherfi-gain">R$ 1.188,00</span> (inclui <span id="etherfi-cashback">R$ 250,00</span> de cashback)
+            </div>
+            <a id="cta-etherfi" href="#" class="btn btn-primary btn-block" rel="noopener noreferrer" referrerpolicy="no-referrer">Solicitar Cartão ether.fi Cash →</a>
+            <small class="browser-alert-note">💡 <strong>Aviso Importante:</strong> Abra o link e finalize seu cadastro pelo navegador antes de baixar o app no celular para garantir a atribuição e elegibilidade de cashback.</small>
+          </div>
+
+          <!-- 2ª LINHA: ARQ PARA SAQUES ATM -->
+          <div class="tier-card">
+            <span class="tier-badge badge-silver">🥈 2ª Opção — Onde só aceitar papel-moeda</span>
+            <h3 class="tier-title">Cartão ARQ (Saque sem Taxa em Caixas Eletrônicos)</h3>
+            <p class="tier-desc">Se o comércio não aceita cartão e você precisa de dinheiro vivo, use o cartão ARQ para sacar moeda local em ATMs fee-free. Economia de até R$ 35 por saque frente aos caixas tradicionais.</p>
+            <small class="browser-alert-note">⚠️ <strong>Regra anti-golpe no ATM:</strong> Quando a tela do caixa eletrônico perguntar se você quer conversão garantida (DCC), <strong>SEMPRE selecione "Without Conversion" / "Debit in Local Currency"</strong>.</small>
+            <div class="btn-row">
+              <a id="cta-arq" href="#" class="btn btn-secondary btn-block" rel="noopener noreferrer" referrerpolicy="no-referrer">Ver Rota de Saque com ARQ →</a>
+            </div>
+          </div>
+
+          <!-- 3ª LINHA: BYBIT PAY (FALLBACK) -->
+          <div class="tier-card">
+            <span class="tier-badge badge-bronze">🥉 3ª Opção — Fallback de emergência na Ásia</span>
+            <h3 class="tier-title">Bybit Pay (QR Code com USDT)</h3>
+            <p class="tier-desc">Se o comércio local não aceitar cartão internacional e você estiver sem dinheiro vivo sacado, escaneie o QR Code bancário local (VietQR no Vietnã ou PromptPay na Tailândia) debitando diretamente de USDT com taxa zero de transação.</p>
+            <div class="btn-row">
+              <a id="cta-bybit" href="#" class="btn btn-secondary btn-block" rel="noopener noreferrer" referrerpolicy="no-referrer">Abrir Conta Bybit para QR Code →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 4: COMUNIDADE E TRANSPARÊNCIA -->
+      <div class="card">
+        <h2><span class="num">4</span>Transparência e Comunidade DLT</h2>
+        <p class="section-desc">A DLT Academy testa todas as ferramentas com capital próprio e experiência real de campo. Não vendemos sonhos nem prometemos milagres: testamos rotas e medimos números.</p>
+
+        <div class="btn-row">
+          <a id="cta-comunidade" href="#" class="btn btn-telegram btn-block" rel="noopener noreferrer" referrerpolicy="no-referrer">Entrar no Grupo Aberto da DLT Academy no Telegram →</a>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+</main>
+
+<footer class="bottom">
+  <div class="wrap">
+    <p>DLT Academy © 2026 — Educação financeira de trincheira. Sem promessa de lucro. As condições de cashback, IOF e spreads dependem de termos de terceiros e elegibilidade cadastral.</p>
+  </div>
+</footer>
+
+<script src="config.js"></script>
+<script src="js/tracking.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
