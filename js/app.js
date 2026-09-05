@@ -4,14 +4,12 @@
 // ============================================================
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Estado inicial
   const state = {
     destino: "asia",
     gasto: 10000,
     metodo: "bancao"
   };
 
-  // Referências do DOM
   const destinoPills = document.querySelectorAll(".pill-destino");
   const metodoPills = document.querySelectorAll(".pill-metodo");
   const gastoSlider = document.getElementById("gasto-slider");
@@ -26,54 +24,34 @@ document.addEventListener("DOMContentLoaded", () => {
   const tableMetodoCost = document.getElementById("table-metodo-cost");
   const tableMetodoRate = document.getElementById("table-metodo-rate");
 
-  // Dados de benchmark e equivalências
+  // Referências conservadoras: só automatizamos o que é comparável sem
+  // inventar um spread universal para instituições/casas de câmbio distintas.
   const BENCHMARKS = {
     bancao: {
-      nome: "Cartão de Crédito Bancão Nacional",
-      taxaTotal: 0.0938, // 4.38% IOF + 5.0% Spread
-      desc: "IOF 4,38% + Spread 5,0% + risco de DCC"
+      nome: "Cartão de crédito brasileiro",
+      taxaConhecida: 0.035,
+      desc: "IOF de 3,5% + spread/tarifas do emissor (não incluídos na conta automática)",
+      tipo: "minimum"
     },
     fintech: {
-      nome: "Fintech Global / Nomad / Wise",
-      taxaTotal: 0.0430, // 1.1% IOF + 2.0% Spread entrada + 1.2% FX saída
-      desc: "IOF 1,1% + Spread 2% + markup cambial de saída"
+      nome: "Conta global / cartão multimoedas",
+      taxaConhecida: null,
+      desc: "Sem alíquota universal: a Wise usa 3,5% na conversão comum e 1,1% no Rende+; outras contas têm regras próprias",
+      tipo: "variable"
     },
     especie: {
-      nome: "Dinheiro Físico em Casa de Câmbio",
-      taxaTotal: 0.0700, // 7.0% Spread balcão
-      desc: "Spread médio de balcão turismo (6% a 8%)"
+      nome: "Dinheiro em casa de câmbio",
+      taxaConhecida: null,
+      desc: "Sem spread universal: compare valor entregue, cotação e eventuais tarifas no momento da compra",
+      tipo: "variable"
     }
   };
 
   const DESTINOS = {
-    asia: {
-      nome: "Sudeste Asiático (Vietnã, Tailândia, Indonésia)",
-      custoNoite: 80,
-      custoRefeicao: 15,
-      itemNomeNoite: "noites de hospedagem boutique",
-      itemNomeRefeicao: "refeições completas / tigelas de Pho"
-    },
-    europa: {
-      nome: "Europa (Zona do Euro)",
-      custoNoite: 200,
-      custoRefeicao: 120,
-      itemNomeNoite: "diárias de hostel / hotel",
-      itemNomeRefeicao: "passagens de trem ou almoços"
-    },
-    eua: {
-      nome: "Estados Unidos / Américas",
-      custoNoite: 250,
-      custoRefeicao: 70,
-      itemNomeNoite: "diárias de hospedagem",
-      itemNomeRefeicao: "refeições e cafés"
-    },
-    global: {
-      nome: "Outro / Viagem Global",
-      custoNoite: 150,
-      custoRefeicao: 40,
-      itemNomeNoite: "diárias de estadia média",
-      itemNomeRefeicao: "refeições diárias"
-    }
+    asia: "Sudeste Asiático",
+    europa: "Europa",
+    eua: "Estados Unidos / Américas",
+    global: "viagem global"
   };
 
   function formatBRL(val) {
@@ -82,43 +60,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function recalculate() {
     const metodoData = BENCHMARKS[state.metodo];
-    const destinoData = DESTINOS[state.destino];
+    const destinoNome = DESTINOS[state.destino] || "sua viagem";
     const gasto = state.gasto;
 
-    // Perda no método tradicional
-    const bleedTotal = gasto * metodoData.taxaTotal;
-
-    // Benefício com ether.fi Cash
-    // Custo FX Visa interbancário: 0.5%
-    // Cashback médio elegível: 2.5% a 3.0% (usando 2.5% conservador)
-    const cashback = gasto * 0.025;
-    const custoVisa = gasto * 0.005;
-    const retornoLiquidoEtherfi = cashback - custoVisa; // Ganho real positivo
-    const diferencaTotal = bleedTotal + retornoLiquidoEtherfi;
-
-    // Equivalências de estilo de vida
-    const noitesPerdidas = Math.floor(bleedTotal / destinoData.custoNoite);
-    const refeicoesPerdidas = Math.floor(bleedTotal / destinoData.custoRefeicao);
-
-    // Atualiza a interface
-    bleedValEl.textContent = formatBRL(bleedTotal);
-
-    if (noitesPerdidas > 0 && refeicoesPerdidas > 0) {
-      lifestyleTextEl.innerHTML = `Esse dinheiro perdido em tarifas pagaria aproximadamente <strong>${noitesPerdidas} ${destinoData.itemNomeNoite}</strong> ou cerca de <strong>${refeicoesPerdidas} ${destinoData.itemNomeRefeicao}</strong> em ${destinoData.nome}.`;
+    if (typeof metodoData.taxaConhecida === "number") {
+      const custoConhecido = gasto * metodoData.taxaConhecida;
+      bleedValEl.textContent = formatBRL(custoConhecido);
+      lifestyleTextEl.innerHTML = `Este é o <strong>custo mínimo conhecido</strong> do cenário selecionado: só o IOF vigente de 3,5%. Spread, tarifa do emissor, cashback e DCC podem mudar o total real. Confira a fatura/app antes de decidir para ${destinoNome}.`;
+      tableMetodoCost.textContent = formatBRL(custoConhecido);
+      tableMetodoRate.textContent = metodoData.desc;
     } else {
-      lifestyleTextEl.innerHTML = `Esse valor é um pedágio invisível que vai direto para o caixa do banco, sem gerar nenhum benefício para a sua viagem.`;
+      bleedValEl.textContent = "Depende da rota";
+      lifestyleTextEl.textContent = `Não existe uma alíquota única confiável para esta categoria em ${destinoNome}. Compare o valor final recebido/cobrado na rota que você realmente usa.`;
+      tableMetodoCost.textContent = "Compare no app/cotação";
+      tableMetodoRate.textContent = metodoData.desc;
     }
 
-    etherfiGainEl.textContent = formatBRL(diferencaTotal);
-    etherfiCashbackEl.textContent = formatBRL(cashback);
-
-    // Tabela comparativa
     tableMetodoName.textContent = metodoData.nome;
-    tableMetodoCost.textContent = formatBRL(bleedTotal);
-    tableMetodoRate.textContent = `~${(metodoData.taxaTotal * 100).toFixed(1)}% do valor gasto`;
+
+    // ether.fi: benefício atual é progressivo e não permite projetar uma
+    // economia fixa sem conhecer membership, gasto elegível, funding e FX.
+    etherfiGainEl.textContent = "depende do caso";
+    etherfiCashbackEl.textContent = "0,5%–3%";
   }
 
-  // Event Listeners - Destino
   destinoPills.forEach(pill => {
     pill.addEventListener("click", () => {
       destinoPills.forEach(p => p.classList.remove("active"));
@@ -129,7 +94,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Event Listeners - Método
   metodoPills.forEach(pill => {
     pill.addEventListener("click", () => {
       metodoPills.forEach(p => p.classList.remove("active"));
@@ -140,7 +104,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Sincronização Slider & Input Numérico
   gastoSlider.addEventListener("input", (e) => {
     state.gasto = Number(e.target.value);
     gastoInput.value = state.gasto;
@@ -155,7 +118,6 @@ document.addEventListener("DOMContentLoaded", () => {
     recalculate();
   });
 
-  // Wiring de links e conversão via tracking.js
   const etherfiBtn = document.getElementById("cta-etherfi");
   const arqBtn = document.getElementById("cta-arq");
   const bybitBtn = document.getElementById("cta-bybit");
@@ -189,6 +151,5 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Executa o cálculo inicial
   recalculate();
 });
