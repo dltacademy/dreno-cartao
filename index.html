@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>O Dreno do Cartão no Exterior: Custo Real — DLT</title>
-<meta name="description" content="Calcule o sangramento invisível de IOF (4,38%), spread cambial e DCC na sua viagem e descubra o setup real de menor custo líquido.">
+<title>O Dreno do Cartão no Exterior: compare custos reais — DLT</title>
+<meta name="description" content="Compare o IOF conhecido e os custos variáveis de cartão, conta global, câmbio e rotas alternativas antes de gastar no exterior.">
 <meta name="robots" content="index, follow">
 <meta name="referrer" content="no-referrer">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://gc.zgo.at; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self' https://*.goatcounter.com; object-src 'none'; frame-src 'none'; worker-src 'none'; base-uri 'none'; form-action 'self'; upgrade-insecure-requests">
@@ -13,8 +13,8 @@
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="DLT Academy">
-<meta property="og:title" content="O Dreno do Cartão no Exterior: Custo Real — DLT">
-<meta property="og:description" content="Calcule o sangramento invisível de IOF e spread cambial nas suas viagens e descubra como estancar as perdas.">
+<meta property="og:title" content="O Dreno do Cartão no Exterior: compare custos reais — DLT">
+<meta property="og:description" content="Veja o custo conhecido e identifique o que ainda precisa ser conferido no app, na fatura ou na cotação antes de pagar fora.">
 <meta property="og:url" content="https://dreno-cartao.dlt.academy/">
 <meta property="og:image" content="https://dreno-cartao.dlt.academy/og-image.svg">
 <meta property="og:image:type" content="image/svg+xml">
@@ -25,8 +25,8 @@
 
 <!-- Twitter/X -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="O Dreno do Cartão no Exterior — Calculadora de Custo Real">
-<meta name="twitter:description" content="Calcule o sangramento invisível de IOF e spread cambial nas suas viagens e descubra como estancar as perdas.">
+<meta name="twitter:title" content="O Dreno do Cartão no Exterior">
+<meta name="twitter:description" content="Compare IOF, câmbio, funding e custos variáveis antes de escolher como pagar no exterior.">
 <meta name="twitter:image" content="https://dreno-cartao.dlt.academy/og-image.svg">
 <meta name="twitter:image:alt" content="O Dreno do Cartão no Exterior — ferramenta gratuita da DLT Academy">
 
@@ -36,13 +36,12 @@
 <link rel="stylesheet" href="styles-tool.css">
 <link rel="stylesheet" href="dlt-patterns.css">
 
-<!-- Dados estruturados JSON-LD -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "O Dreno do Cartão no Exterior",
-  "description": "Calculadora educacional de custos cambiais invisíveis (IOF, spread e taxas de transação) em viagens internacionais, comparando métodos tradicionais com o setup real de nômades digitais.",
+  "description": "Calculadora educacional para comparar custos conhecidos e variáveis de pagamentos internacionais.",
   "url": "https://dreno-cartao.dlt.academy/",
   "applicationCategory": "FinanceApplication",
   "operatingSystem": "Web",
@@ -64,21 +63,18 @@
 
 <main id="top">
   <div class="wrap">
-
     <section class="hero">
-      <span class="disclaimer-badge">⚠️ Ferramenta Educacional — Testada em Campo</span>
-      <h1 id="headline">Quanto o seu banco come em <span class="highlight">taxas invisíveis</span> no exterior?</h1>
-      <p class="subtitle" id="subheadline">Descubra o sangramento real de IOF (4,38%), spread cambial e taxas ocultas na sua próxima viagem e veja o setup de menor custo líquido testado na estrada.</p>
+      <span class="disclaimer-badge">⚠️ Ferramenta educacional — custos variam por rota</span>
+      <h1 id="headline">Quanto custa de verdade <span class="highlight">pagar no exterior</span>?</h1>
+      <p class="subtitle" id="subheadline">Veja o custo conhecido da sua rota e identifique o que ainda precisa ser conferido no app, na fatura ou na cotação antes de decidir.</p>
 
-      <!-- CARD 1: INPUTS DO USUÁRIO -->
       <div class="card">
         <h2><span class="num">1</span>Simule o gasto da sua viagem</h2>
-        <p class="section-desc">Selecione o destino, informe quanto pretende gastar e escolha seu método de pagamento habitual.</p>
+        <p class="section-desc">Selecione o destino, informe quanto pretende gastar e escolha seu método habitual. A ferramenta não inventa um spread único para instituições diferentes.</p>
 
         <div class="control-grid">
-          <!-- Destino -->
           <div class="control">
-            <span class="control-label"><strong>Destino da Viagem:</strong></span>
+            <span class="control-label"><strong>Destino da viagem:</strong></span>
             <div class="pill-group">
               <div class="pill-btn pill-destino active" data-destino="asia">🌏 Sudeste Asiático</div>
               <div class="pill-btn pill-destino" data-destino="europa">🏛️ Europa</div>
@@ -87,10 +83,9 @@
             </div>
           </div>
 
-          <!-- Gasto em Reais -->
           <div class="control">
             <div class="control-label">
-              <strong>Orçamento Estimado (BRL):</strong>
+              <strong>Orçamento estimado (BRL):</strong>
               <span>Arraste ou digite</span>
             </div>
             <div class="currency-input-wrap">
@@ -100,33 +95,29 @@
             <input type="range" id="gasto-slider" min="1000" max="100000" step="500" value="10000">
           </div>
 
-          <!-- Meio de pagamento atual -->
           <div class="control">
             <span class="control-label"><strong>Como você costuma pagar no exterior hoje?</strong></span>
             <div class="pill-group">
-              <div class="pill-btn pill-metodo active" data-metodo="bancao">💳 Cartão Bancão (Itaú, Nubank...)</div>
-              <div class="pill-btn pill-metodo" data-metodo="fintech">🌍 Fintech Global (Wise, Nomad...)</div>
-              <div class="pill-btn pill-metodo" data-metodo="especie">💵 Dinheiro de Casa de Câmbio</div>
+              <div class="pill-btn pill-metodo active" data-metodo="bancao">💳 Cartão de crédito brasileiro</div>
+              <div class="pill-btn pill-metodo" data-metodo="fintech">🌍 Conta global / cartão multimoedas</div>
+              <div class="pill-btn pill-metodo" data-metodo="especie">💵 Casa de câmbio / papel-moeda</div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- CARD 2: DIAGNÓSTICO DO SANGRAMENTO -->
       <div class="card">
-        <h2><span class="num">2</span>O sangramento invisível detectado</h2>
-        <p class="section-desc">O valor abaixo é o que você deixa no bolso de intermediários e bancos sem perceber.</p>
+        <h2><span class="num">2</span>Custo conhecido e o que ainda varia</h2>
+        <p class="section-desc">A calculadora automatiza apenas componentes que podem ser comparados sem inventar uma tarifa universal. Spread, tarifa do emissor, cotação da casa de câmbio e benefícios precisam ser conferidos na rota real.</p>
 
         <div class="bleed-highlight-card">
-          <div class="bleed-label">Total drenado em tarifas e spreads</div>
-          <div class="bleed-val" id="bleed-val">R$ 938,00</div>
-          <div class="stat-label">Valor calculado sobre a modalidade selecionada</div>
+          <div class="bleed-label">Custo conhecido no cenário selecionado</div>
+          <div class="bleed-val" id="bleed-val">R$ 350,00</div>
+          <div class="stat-label">No cartão de crédito brasileiro, o valor inicial representa apenas o IOF de 3,5%; outros custos não estão presumidos.</div>
 
           <div class="lifestyle-impact-box">
-            <div class="lifestyle-icon">🍜</div>
-            <div class="lifestyle-text" id="lifestyle-text">
-              Esse dinheiro perdido em tarifas pagaria aproximadamente <strong>11 noites de hospedagem</strong> ou cerca de <strong>62 refeições completas</strong> no Sudeste Asiático.
-            </div>
+            <div class="lifestyle-icon">🔎</div>
+            <div class="lifestyle-text" id="lifestyle-text">Este é o custo mínimo conhecido. Confira spread, tarifas, cashback e DCC na sua fatura ou no app antes de comparar alternativas.</div>
           </div>
         </div>
 
@@ -134,100 +125,92 @@
           <thead>
             <tr>
               <th>Modalidade</th>
-              <th>Custo Total Estimado</th>
-              <th>Alíquota Efetiva</th>
+              <th>Custo automatizado</th>
+              <th>Premissa</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td id="table-metodo-name">Cartão de Crédito Bancão Nacional</td>
-              <td id="table-metodo-cost" class="val-bad">R$ 938,00</td>
-              <td id="table-metodo-rate">~9,4% do valor gasto</td>
+              <td id="table-metodo-name">Cartão de crédito brasileiro</td>
+              <td id="table-metodo-cost" class="val-bad">R$ 350,00</td>
+              <td id="table-metodo-rate">IOF de 3,5% + spread/tarifas do emissor não incluídos</td>
             </tr>
             <tr>
-              <td>Setup Web3 (ether.fi Cash)</td>
-              <td class="val-good">Negativo com cashback elegível</td>
-              <td>0% IOF + até 3% de cashback</td>
+              <td>ether.fi Cash</td>
+              <td class="val-good">Depende de funding, FX e cashback elegível</td>
+              <td>Cashback atual progressivo de 0,5% a 3%, conforme membership e gasto</td>
             </tr>
           </tbody>
         </table>
-        <p class="section-desc">Premissas da estimativa: cartão de bancão ≈ IOF 4,38% + spread ≈ 5%; fintech global ≈ IOF 1,1% + spreads de entrada e saída; dinheiro em casa de câmbio ≈ spread médio de balcão (6% a 8%). Alíquotas e spreads mudam — confira os valores vigentes antes de decidir.</p>
+        <p class="section-desc">Referências de 05/09/2026: operações internacionais comuns no cartão brasileiro usam IOF de 3,5%. Na Wise, a conversão comum de BRL para saldo estrangeiro também usa 3,5%; 1,1% é uma condição específica do Rende+. Para outras contas e papel-moeda, compare a rota exibida no momento.</p>
       </div>
 
-      <!-- CARD 3: A HIERARQUIA REAL DO VIAJANTE (O SETUP DO OPERADOR) -->
       <div class="card">
-        <h2><span class="num">3</span>O setup real de pagamentos (hierarquia testada na estrada)</h2>
-        <p class="section-desc">Como viajar o mundo sem pagar pedágio bancário abusivo, seguindo a ordem prática de menor custo líquido:</p>
+        <h2><span class="num">3</span>Rotas para comparar</h2>
+        <p class="section-desc">Não existe uma hierarquia universal. Use cada rota quando ela resolve uma necessidade real e o custo total for competitivo no seu caso.</p>
 
         <div class="setup-hierarchy-grid">
-          <!-- 1ª LINHA: ETHER.FI CASH -->
           <div class="tier-card tier-primary">
-            <span class="tier-badge badge-gold">🥇 1ª opção — onde aceitam cartão</span>
-            <h3 class="tier-title">ether.fi Cash (Cartão Visa Web3 On-Chain)</h3>
-            <p class="tier-desc">Pague suas despesas do dia a dia (hotéis, restaurantes, compras) usando saldo em dólar digital (USDC). Sem o IOF do cartão de crédito brasileiro (4,38%) e com cashback progressivo.</p>
-            <div class="tier-gain">
-              💰 Economia líquida projetada: <span id="etherfi-gain">R$ 1.188,00</span> (inclui <span id="etherfi-cashback">R$ 250,00</span> de cashback)
-            </div>
-            <a id="cta-etherfi" href="https://www.ether.fi/@e155ee95" class="btn btn-primary btn-block" rel="noopener noreferrer" referrerpolicy="no-referrer">Solicitar Cartão ether.fi Cash →</a>
-            <small class="browser-alert-note">💡 <strong>Aviso importante:</strong> abra o link e finalize seu cadastro pelo navegador antes de baixar o app no celular para garantir o vínculo da indicação e a elegibilidade ao cashback.</small>
+            <span class="tier-badge badge-gold">Cartão / compras</span>
+            <h3 class="tier-title">ether.fi Cash</h3>
+            <p class="tier-desc">Pode ser uma alternativa para compras elegíveis, mas o resultado depende do custo de funding, FX, membership e cashback disponível. O cashback não é 3% fixo: atualmente varia progressivamente de 3% a 0,5% conforme gasto e nível.</p>
+            <div class="tier-gain">Custo líquido: <span id="etherfi-gain">depende do caso</span> · cashback elegível: <span id="etherfi-cashback">0,5%–3%</span></div>
+            <a id="cta-etherfi" href="https://www.ether.fi/@e155ee95" class="btn btn-primary btn-block" rel="noopener noreferrer" referrerpolicy="no-referrer">Conferir condições do ether.fi Cash →</a>
+            <small class="browser-alert-note">💡 Link de indicação. Confirme elegibilidade, membership, cashback e custos atuais antes de cadastrar ou pagar.</small>
           </div>
 
-          <!-- 2ª LINHA: ARQ PARA SAQUES ATM -->
           <div class="tier-card">
-            <span class="tier-badge badge-silver">🥈 2ª opção — onde só se aceita dinheiro</span>
-            <h3 class="tier-title">Cartão ARQ Global (saque em dinheiro sem IOF)</h3>
-            <p class="tier-desc">Se a feira, o mercado ou a lavanderia não aceitam cartão, o ARQ é o cartão para sacar moeda física. O saldo Global em USDc/EURc é formado com <strong>0% de IOF</strong> e custo de apenas ~0,5%, pagando 1% de tarifa no saque no plano Standard.</p>
+            <span class="tier-badge badge-silver">Dinheiro físico / ATM</span>
+            <h3 class="tier-title">ARQ Global como rota de saque a comparar</h3>
+            <p class="tier-desc">No plano Standard, a ARQ informa tarifa própria de 1% por saque. O saldo Global pode ser formado em USDc/EURc sem IOF brasileiro, com conversão aproximada de 0,5%; a tarifa do operador do ATM e o câmbio até a moeda local ainda podem existir.</p>
 
             <div class="atm-box">
-              <div class="atm-title">🏧 Comparativo: Quanto custa sacar R$ 1.000 em espécie?</div>
+              <div class="atm-title">🏧 Antes de sacar, compare a rota completa</div>
               <div class="atm-grid">
                 <div class="atm-stat">
-                  <div class="atm-stat-val val-bad">~R$ 118</div>
-                  <div class="atm-stat-label">Bancão (IOF 4,38% + R$ 25 + spread)</div>
+                  <div class="atm-stat-val">Cartão bancário</div>
+                  <div class="atm-stat-label">Pode somar IOF, tarifa de saque/adiantamento, spread e ATM. Consulte o emissor.</div>
                 </div>
                 <div class="atm-stat">
-                  <div class="atm-stat-val">~R$ 65</div>
-                  <div class="atm-stat-label">Wise (IOF 3,5% + taxa após cota)</div>
+                  <div class="atm-stat-val">Wise / conta global</div>
+                  <div class="atm-stat-label">Franquias, IOF e tarifas variam pela rota/plano. Confira a prévia.</div>
                 </div>
                 <div class="atm-stat">
-                  <div class="atm-stat-val val-good">~R$ 15</div>
-                  <div class="atm-stat-label">ARQ (0% IOF + 0,5% spread + 1% saque)</div>
+                  <div class="atm-stat-val val-good">ARQ Standard</div>
+                  <div class="atm-stat-label">1% de tarifa própria por saque; taxa do ATM terceiro pode ser cobrada.</div>
                 </div>
               </div>
             </div>
 
-            <small class="browser-alert-note">⚠️ <strong>Regra anti-golpe no ATM:</strong> quando a tela do caixa eletrônico perguntar se você quer conversão garantida (DCC), <strong>selecione sempre "Without Conversion" / "Debit in Local Currency"</strong> para não perder até 10% na cotação da máquina.</small>
+            <small class="browser-alert-note">⚠️ Quando o ATM oferecer conversão própria (DCC), compare a cotação e prefira a cobrança em moeda local quando essa for a opção adequada. Não tratamos um percentual de perda como universal.</small>
 
             <div class="btn-row">
-              <a id="cta-arq" href="https://www.arqfinance.com/referrals/general?referralCode=tiagohyd_t7t&amp;pid=referral&amp;c=general&amp;is_retargeting=true" class="btn btn-secondary btn-block" rel="noopener noreferrer" referrerpolicy="no-referrer">Solicitar Cartão ARQ para Saques no Exterior →</a>
+              <a id="cta-arq" href="https://www.arqfinance.com/referrals/general?referralCode=tiagohyd_t7t&amp;pid=referral&amp;c=general&amp;is_retargeting=true" class="btn btn-secondary btn-block" rel="noopener noreferrer" referrerpolicy="no-referrer">Conferir Cartão ARQ Global →</a>
             </div>
-            <a class="atm-link" href="https://dlt.academy/blog/arq-saques-exterior/" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">📖 Ler a auditoria comparativa completa: ARQ vs Wise vs Revolut →</a>
+            <a class="atm-link" href="https://dlt.academy/blog/arq-saques-exterior/" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">📖 Ler a comparação completa de saques →</a>
           </div>
 
-          <!-- 3ª LINHA: BYBIT PAY (FALLBACK) -->
           <div class="tier-card">
-            <span class="tier-badge badge-bronze">🥉 3ª opção — saída de emergência na Ásia</span>
-            <h3 class="tier-title">Bybit Pay (QR Code com USDT)</h3>
-            <p class="tier-desc">Se o comércio local não aceitar cartão internacional e você estiver sem dinheiro em espécie, escaneie o QR Code bancário local (VietQR no Vietnã ou PromptPay na Tailândia) com débito em USDT e sem tarifa de transação.</p>
+            <span class="tier-badge badge-bronze">QR local quando suportado</span>
+            <h3 class="tier-title">Bybit Pay para VietQR no Vietnã</h3>
+            <p class="tier-desc">A Bybit documenta VietQR no Vietnã e informa zero transaction fee nessa rota; conversão/FX ainda pode gerar custo. A lista oficial atual não inclui PromptPay na Tailândia, então confirme o sistema suportado em cada país antes de depender de QR.</p>
             <div class="btn-row">
-              <a id="cta-bybit" href="https://www.bybit.com/en/invite/?ref=O0YDQDM" class="btn btn-secondary btn-block" rel="noopener noreferrer" referrerpolicy="no-referrer">Abrir Conta Bybit para QR Code →</a>
+              <a id="cta-bybit" href="https://www.bybit.com/en/invite/?ref=O0YDQDM" class="btn btn-secondary btn-block" rel="noopener noreferrer" referrerpolicy="no-referrer">Conferir Bybit Pay →</a>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- CARD 4: COMUNIDADE E TRANSPARÊNCIA -->
       <div class="card">
         <h2><span class="num">4</span>Transparência e comunidade DLT Academy</h2>
-        <p class="section-desc">A DLT Academy testa as ferramentas com capital próprio e experiência real de campo. Sem promessa de lucro: confira os números e repita a comparação no seu caso.</p>
+        <p class="section-desc">A DLT Academy usa experiências reais como ponto de partida, mas não transforma um teste em regra universal. Refaça a comparação com os valores do seu app, da sua fatura e do país da viagem.</p>
 
         <div class="btn-row">
-          <a id="cta-comunidade" href="https://t.me/dltacademy" class="btn btn-telegram btn-block" rel="noopener noreferrer" referrerpolicy="no-referrer">Entrar no Grupo Aberto da DLT Academy no Telegram →</a>
+          <a id="cta-comunidade" href="https://t.me/dltacademy" class="btn btn-telegram btn-block" rel="noopener noreferrer" referrerpolicy="no-referrer">Entrar grátis no grupo →</a>
         </div>
       </div>
 
     </section>
-
   </div>
 </main>
 
