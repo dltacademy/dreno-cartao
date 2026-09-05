@@ -97,7 +97,7 @@
               <span class="currency-symbol">R$</span>
               <input type="number" id="gasto-input" class="currency-field" value="10000" min="1000" max="100000" step="500">
             </div>
-            <input type="range" id="gasto-slider" min="1000" max="50000" step="500" value="10000">
+            <input type="range" id="gasto-slider" min="1000" max="100000" step="500" value="10000">
           </div>
 
           <!-- Meio de pagamento atual -->
@@ -114,11 +114,11 @@
 
       <!-- CARD 2: DIAGNÓSTICO DO SANGRAMENTO -->
       <div class="card">
-        <h2><span class="num">2</span>O Sangramento Invisível Detectado</h2>
+        <h2><span class="num">2</span>O sangramento invisível detectado</h2>
         <p class="section-desc">O valor abaixo é o que você deixa no bolso de intermediários e bancos sem perceber.</p>
 
         <div class="bleed-highlight-card">
-          <div class="bleed-label">Total Sangrado em Tarifas e Spreads</div>
+          <div class="bleed-label">Total drenado em tarifas e spreads</div>
           <div class="bleed-val" id="bleed-val">R$ 938,00</div>
           <div class="stat-label">Valor calculado sobre a modalidade selecionada</div>
 
@@ -146,36 +146,37 @@
             </tr>
             <tr>
               <td>Setup Web3 (ether.fi Cash)</td>
-              <td class="val-good">Custo Líquido Negativo</td>
-              <td>0% IOF + até 3% Cashback</td>
+              <td class="val-good">Negativo com cashback elegível</td>
+              <td>0% IOF + até 3% de cashback</td>
             </tr>
           </tbody>
         </table>
+        <p class="section-desc">Premissas da estimativa: cartão de bancão ≈ IOF 4,38% + spread ≈ 5%; fintech global ≈ IOF 1,1% + spreads de entrada e saída; dinheiro em casa de câmbio ≈ spread médio de balcão (6% a 8%). Alíquotas e spreads mudam — confira os valores vigentes antes de decidir.</p>
       </div>
 
       <!-- CARD 3: A HIERARQUIA REAL DO VIAJANTE (O SETUP DO OPERADOR) -->
       <div class="card">
-        <h2><span class="num">3</span>O Setup Real de Pagamentos (Hierarquia Testada na Estrada)</h2>
+        <h2><span class="num">3</span>O setup real de pagamentos (hierarquia testada na estrada)</h2>
         <p class="section-desc">Como viajar o mundo sem pagar pedágio bancário abusivo, seguindo a ordem prática de menor custo líquido:</p>
 
         <div class="setup-hierarchy-grid">
           <!-- 1ª LINHA: ETHER.FI CASH -->
           <div class="tier-card tier-primary">
-            <span class="tier-badge badge-gold">🥇 1ª Opção — Onde aceitar cartão</span>
+            <span class="tier-badge badge-gold">🥇 1ª opção — onde aceitam cartão</span>
             <h3 class="tier-title">ether.fi Cash (Cartão Visa Web3 On-Chain)</h3>
-            <p class="tier-desc">Pague suas despesas do dia a dia (hotéis, restaurantes, compras) usando saldo em dólar digital (USDC) direto na rede. Sem IOF bancário brasileiro (4,38%) e com cashback progressivo.</p>
+            <p class="tier-desc">Pague suas despesas do dia a dia (hotéis, restaurantes, compras) usando saldo em dólar digital (USDC). Sem o IOF do cartão de crédito brasileiro (4,38%) e com cashback progressivo.</p>
             <div class="tier-gain">
               💰 Economia líquida projetada: <span id="etherfi-gain">R$ 1.188,00</span> (inclui <span id="etherfi-cashback">R$ 250,00</span> de cashback)
             </div>
-            <a id="cta-etherfi" href="#" class="btn btn-primary btn-block" rel="noopener noreferrer" referrerpolicy="no-referrer">Solicitar Cartão ether.fi Cash →</a>
-            <small class="browser-alert-note">💡 <strong>Aviso Importante:</strong> Abra o link e finalize seu cadastro pelo navegador antes de baixar o app no celular para garantir a atribuição e elegibilidade de cashback.</small>
+            <a id="cta-etherfi" href="https://www.ether.fi/@e155ee95" class="btn btn-primary btn-block" rel="noopener noreferrer" referrerpolicy="no-referrer">Solicitar Cartão ether.fi Cash →</a>
+            <small class="browser-alert-note">💡 <strong>Aviso importante:</strong> abra o link e finalize seu cadastro pelo navegador antes de baixar o app no celular para garantir o vínculo da indicação e a elegibilidade ao cashback.</small>
           </div>
 
           <!-- 2ª LINHA: ARQ PARA SAQUES ATM -->
           <div class="tier-card">
-            <span class="tier-badge badge-silver">🥈 2ª Opção — Onde só aceitar papel-moeda</span>
-            <h3 class="tier-title">Cartão ARQ Global (Saque em Dinheiro sem Roubo de IOF)</h3>
-            <p class="tier-desc">Se a feira, o mercado ou a lavanderia não passam cartão, o ARQ é o cartão ideal para sacar moeda física. O saldo Global em USDc/EURc é formado com <strong>0% de IOF</strong> e custo de apenas ~0,5%, pagando 1% fixo de tarifa no saque Standard.</p>
+            <span class="tier-badge badge-silver">🥈 2ª opção — onde só se aceita dinheiro</span>
+            <h3 class="tier-title">Cartão ARQ Global (saque em dinheiro sem IOF)</h3>
+            <p class="tier-desc">Se a feira, o mercado ou a lavanderia não aceitam cartão, o ARQ é o cartão para sacar moeda física. O saldo Global em USDc/EURc é formado com <strong>0% de IOF</strong> e custo de apenas ~0,5%, pagando 1% de tarifa no saque no plano Standard.</p>
 
             <div class="atm-box">
               <div class="atm-title">🏧 Comparativo: Quanto custa sacar R$ 1.000 em espécie?</div>
@@ -195,21 +196,21 @@
               </div>
             </div>
 
-            <small class="browser-alert-note">⚠️ <strong>Regra anti-golpe no ATM:</strong> Quando a tela do caixa eletrônico perguntar se você quer conversão garantida (DCC), <strong>SEMPRE selecione "Without Conversion" / "Debit in Local Currency"</strong> para não perder até 10% na cotação da máquina.</small>
+            <small class="browser-alert-note">⚠️ <strong>Regra anti-golpe no ATM:</strong> quando a tela do caixa eletrônico perguntar se você quer conversão garantida (DCC), <strong>selecione sempre "Without Conversion" / "Debit in Local Currency"</strong> para não perder até 10% na cotação da máquina.</small>
 
             <div class="btn-row">
-              <a id="cta-arq" href="#" class="btn btn-secondary btn-block" rel="noopener noreferrer" referrerpolicy="no-referrer">Solicitar Cartão ARQ para Saques no Exterior →</a>
+              <a id="cta-arq" href="https://www.arqfinance.com/referrals/general?referralCode=tiagohyd_t7t&amp;pid=referral&amp;c=general&amp;is_retargeting=true" class="btn btn-secondary btn-block" rel="noopener noreferrer" referrerpolicy="no-referrer">Solicitar Cartão ARQ para Saques no Exterior →</a>
             </div>
-            <a class="atm-link" href="https://dlt.academy/blog/arq-saques-exterior/" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">📖 Ler nossa auditoria comparativa completa: ARQ vs Wise vs Revolut →</a>
+            <a class="atm-link" href="https://dlt.academy/blog/arq-saques-exterior/" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">📖 Ler a auditoria comparativa completa: ARQ vs Wise vs Revolut →</a>
           </div>
 
           <!-- 3ª LINHA: BYBIT PAY (FALLBACK) -->
           <div class="tier-card">
-            <span class="tier-badge badge-bronze">🥉 3ª Opção — Fallback de emergência na Ásia</span>
+            <span class="tier-badge badge-bronze">🥉 3ª opção — saída de emergência na Ásia</span>
             <h3 class="tier-title">Bybit Pay (QR Code com USDT)</h3>
-            <p class="tier-desc">Se o comércio local não aceitar cartão internacional e você estiver sem dinheiro vivo sacado, escaneie o QR Code bancário local (VietQR no Vietnã ou PromptPay na Tailândia) debitando diretamente de USDT com taxa zero de transação.</p>
+            <p class="tier-desc">Se o comércio local não aceitar cartão internacional e você estiver sem dinheiro em espécie, escaneie o QR Code bancário local (VietQR no Vietnã ou PromptPay na Tailândia) com débito em USDT e sem tarifa de transação.</p>
             <div class="btn-row">
-              <a id="cta-bybit" href="#" class="btn btn-secondary btn-block" rel="noopener noreferrer" referrerpolicy="no-referrer">Abrir Conta Bybit para QR Code →</a>
+              <a id="cta-bybit" href="https://www.bybit.com/en/invite/?ref=O0YDQDM" class="btn btn-secondary btn-block" rel="noopener noreferrer" referrerpolicy="no-referrer">Abrir Conta Bybit para QR Code →</a>
             </div>
           </div>
         </div>
@@ -217,11 +218,11 @@
 
       <!-- CARD 4: COMUNIDADE E TRANSPARÊNCIA -->
       <div class="card">
-        <h2><span class="num">4</span>Transparência e Comunidade DLT</h2>
-        <p class="section-desc">A DLT Academy testa todas as ferramentas com capital próprio e experiência real de campo. Não vendemos sonhos nem prometemos milagres: testamos rotas e medimos números.</p>
+        <h2><span class="num">4</span>Transparência e comunidade DLT Academy</h2>
+        <p class="section-desc">A DLT Academy testa as ferramentas com capital próprio e experiência real de campo. Sem promessa de lucro: confira os números e repita a comparação no seu caso.</p>
 
         <div class="btn-row">
-          <a id="cta-comunidade" href="#" class="btn btn-telegram btn-block" rel="noopener noreferrer" referrerpolicy="no-referrer">Entrar no Grupo Aberto da DLT Academy no Telegram →</a>
+          <a id="cta-comunidade" href="https://t.me/dltacademy" class="btn btn-telegram btn-block" rel="noopener noreferrer" referrerpolicy="no-referrer">Entrar no Grupo Aberto da DLT Academy no Telegram →</a>
         </div>
       </div>
 

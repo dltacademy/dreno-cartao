@@ -151,7 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let val = Number(e.target.value);
     if (isNaN(val) || val < 0) val = 0;
     state.gasto = val;
-    gastoSlider.value = Math.min(Math.max(val, 1000), 50000);
+    gastoSlider.value = Math.min(Math.max(val, 1000), 100000);
     recalculate();
   });
 
