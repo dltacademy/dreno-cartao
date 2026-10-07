@@ -90,7 +90,8 @@ document.addEventListener("DOMContentLoaded", () => {
       pill.classList.add("active");
       state.destino = pill.dataset.destino;
       recalculate();
-      if (typeof track === "function") track("filtro_destino_" + state.destino);
+      // O evento registra só que o filtro foi usado, nunca qual destino a pessoa escolheu.
+      if (typeof track === "function") track("filtro_destino");
     });
   });
 
@@ -100,7 +101,8 @@ document.addEventListener("DOMContentLoaded", () => {
       pill.classList.add("active");
       state.metodo = pill.dataset.metodo;
       recalculate();
-      if (typeof track === "function") track("filtro_metodo_" + state.metodo);
+      // Idem: sem o método escolhido no nome do evento.
+      if (typeof track === "function") track("filtro_metodo");
     });
   });
 
