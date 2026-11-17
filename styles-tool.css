@@ -2,39 +2,6 @@
    Estilos específicos: O Dreno do Cartão no Exterior
    ============================================================ */
 
-.pill-group {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 8px;
-  margin-top: 8px;
-}
-
-.pill-btn {
-  background: var(--bg-elev-2);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 10px 14px;
-  color: var(--text-dim);
-  font-size: 13.5px;
-  font-weight: 600;
-  text-align: center;
-  cursor: pointer;
-  transition: all .15s ease;
-  user-select: none;
-}
-
-.pill-btn:hover {
-  border-color: var(--accent);
-  color: var(--text);
-}
-
-.pill-btn.active {
-  background: rgba(74, 141, 248, 0.15);
-  border-color: var(--accent);
-  color: #FFFFFF;
-  box-shadow: 0 0 12px rgba(74, 141, 248, 0.25);
-}
-
 .currency-input-wrap {
   display: flex;
   align-items: center;
@@ -49,7 +16,7 @@
 .currency-symbol {
   font-family: var(--font-head);
   font-weight: 700;
-  color: var(--accent);
+  color: var(--text-dim);
   font-size: 16px;
 }
 
@@ -64,21 +31,22 @@
   outline: none;
 }
 
+/* Custo conhecido, sem caixa própria: o cartão da seção é a única superfície. A cor vai no
+   número, pelo grau da escala (data-grade="4" no HTML). */
 .bleed-highlight-card {
-  background: linear-gradient(135deg, rgba(248, 113, 113, 0.15), rgba(14, 33, 72, 0.8));
-  border: 1px solid rgba(248, 113, 113, 0.35);
-  border-radius: var(--radius);
-  padding: 24px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 22px 0;
   text-align: center;
   margin: 20px 0;
-  box-shadow: 0 10px 30px rgba(248, 113, 113, 0.12);
 }
 
 .bleed-val {
   font-family: var(--font-head);
   font-size: clamp(32px, 6vw, 46px);
   font-weight: 800;
-  color: var(--red);
+  color: var(--grade-fg, var(--red));
+  font-variant-numeric: tabular-nums;
   line-height: 1.1;
   margin: 6px 0;
   letter-spacing: -0.02em;
@@ -93,30 +61,18 @@
 }
 
 .lifestyle-impact-box {
-  background: rgba(10, 17, 32, 0.85);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 16px 20px;
   margin-top: 16px;
   text-align: left;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.lifestyle-icon {
-  font-size: 28px;
-  flex-shrink: 0;
 }
 
 .lifestyle-text {
-  font-size: 14px;
+  font-size: 15px;
   color: var(--text);
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
 .lifestyle-text strong {
-  color: var(--accent);
+  color: var(--text);
 }
 
 /* 3-Tier Hierarchy Cards */
@@ -126,50 +82,31 @@
   margin-top: 20px;
 }
 
+/* Rotas sem caixa própria: o cartão da seção é a única superfície; linhas separam as rotas. */
 .tier-card {
-  background: var(--bg-elev-2);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 18px 20px;
+  border-top: 1px solid var(--border);
+  padding: 22px 0 4px;
   position: relative;
-  transition: border-color .15s;
 }
 
-.tier-card.tier-primary {
-  border-color: rgba(110, 231, 168, 0.4);
-  background: linear-gradient(180deg, rgba(110, 231, 168, 0.08), rgba(14, 33, 72, 0.4));
-}
-
+/* Camada da rota: rótulo de hierarquia, neutro. Verde, azul e âmbar são cores de resultado e de
+   ação, não de enfeite. */
 .tier-badge {
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  font-size: 11.5px;
+  font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   padding: 3px 8px;
   border-radius: 6px;
   margin-bottom: 8px;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
 }
-
-.tier-badge.badge-gold {
-  background: rgba(110, 231, 168, 0.15);
-  color: var(--green);
-  border: 1px solid rgba(110, 231, 168, 0.3);
-}
-
-.tier-badge.badge-silver {
-  background: rgba(74, 141, 248, 0.15);
-  color: var(--accent);
-  border: 1px solid rgba(74, 141, 248, 0.3);
-}
-
-.tier-badge.badge-bronze {
-  background: rgba(251, 191, 36, 0.15);
-  color: var(--amber);
-  border: 1px solid rgba(251, 191, 36, 0.3);
-}
+.tier-badge.badge-gold { color: var(--text); border-color: #3A4E78; }
 
 .tier-title {
   font-family: var(--font-head);
@@ -180,32 +117,39 @@
 }
 
 .tier-desc {
-  font-size: 13.5px;
+  font-size: 15px;
   color: var(--text-dim);
   margin: 0 0 14px;
   line-height: 1.5;
 }
 
 .tier-gain {
-  font-size: 13.5px;
+  font-size: 15px;
   font-weight: 700;
-  color: var(--green);
+  color: var(--text);
   margin-bottom: 12px;
 }
 
 .browser-alert-note {
-  font-size: 12px;
-  color: var(--amber);
-  margin-top: 8px;
-  line-height: 1.4;
+  font-size: 15px;
+  color: var(--text-dim);
+  border-left: 3px solid var(--amber);
+  padding: 2px 0 2px 12px;
+  margin-top: 12px;
+  line-height: 1.5;
   display: block;
 }
 
+/* display:block deixa a tabela rolar dentro do cartão em vez de alargar a página (a 320 px ela
+   chegava a 367 px e fazia a página inteira rolar para o lado). */
 .breakdown-table {
+  display: block;
+  overflow-x: auto;
+  max-width: 100%;
   width: 100%;
   border-collapse: collapse;
   margin-top: 14px;
-  font-size: 13.5px;
+  font-size: 15px;
 }
 
 .breakdown-table th, .breakdown-table td {
@@ -219,29 +163,25 @@
   font-weight: 600;
 }
 
-.breakdown-table td.val-bad {
-  color: var(--red);
+.breakdown-table td[data-grade] {
+  color: var(--grade-fg);
   font-weight: 700;
 }
-
-.breakdown-table td.val-good {
-  color: var(--green);
-  font-weight: 700;
-}
+/* Premissa, não resultado: texto neutro (verde e vermelho ficam para o custo). */
+.breakdown-table td.val-note { color: var(--text); font-weight: 600; }
 
 /* Mini-Simulador ATM / Saque ARQ */
+/* Mini-Simulador ATM / Saque ARQ — sem caixa: colunas com separador fino. */
 .atm-box {
-  background: rgba(10, 17, 32, 0.95);
-  border: 1px solid rgba(74, 141, 248, 0.25);
-  border-radius: 10px;
-  padding: 14px 16px;
+  border-top: 1px solid var(--border);
+  padding: 14px 0 0;
   margin: 12px 0 14px;
 }
 
 .atm-title {
-  font-size: 13.5px;
+  font-size: 15px;
   font-weight: 700;
-  color: var(--accent);
+  color: var(--text);
   margin-bottom: 8px;
   display: flex;
   align-items: center;
@@ -250,33 +190,44 @@
 
 .atm-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-  gap: 8px;
-  text-align: center;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 14px 0;
+  text-align: left;
 }
 
 .atm-stat {
-  background: var(--bg-elev-2);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 8px 10px;
+  padding: 0 14px;
+  border-left: 1px solid var(--border);
 }
+.atm-stat:first-child { padding-left: 0; border-left: 0; }
 
 .atm-stat-val {
   font-family: var(--font-head);
   font-size: 15px;
   font-weight: 700;
 }
+.atm-stat-val[data-grade] { color: var(--grade-fg); }
 
 .atm-stat-label {
-  font-size: 11px;
+  font-size: 13px;
   color: var(--text-dim);
   margin-top: 2px;
 }
 
 .atm-link {
-  display: inline-block;
-  font-size: 12.5px;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 15px;
   margin-top: 8px;
-  color: var(--accent);
+  color: var(--sky-light);
+}
+
+
+.control .choice-list { margin-top: 8px; }
+
+@media (max-width: 640px) {
+  .atm-grid { grid-template-columns: 1fr; gap: 0; }
+  .atm-stat { padding: 12px 0; border-left: 0; border-top: 1px solid var(--border); }
+  .atm-stat:first-child { padding-top: 4px; border-top: 0; }
 }
