@@ -167,6 +167,8 @@
   color: var(--grade-fg);
   font-weight: 700;
 }
+/* Premissa, não resultado: texto neutro (verde e vermelho ficam para o custo). */
+.breakdown-table td.val-note { color: var(--text); font-weight: 600; }
 
 /* Mini-Simulador ATM / Saque ARQ */
 /* Mini-Simulador ATM / Saque ARQ — sem caixa: colunas com separador fino. */
