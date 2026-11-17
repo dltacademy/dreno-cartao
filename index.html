@@ -64,7 +64,7 @@
 <main id="top">
   <div class="wrap">
     <section class="hero">
-      <span class="disclaimer-badge">⚠️ Ferramenta educacional — custos variam por rota</span>
+      <span class="disclaimer-badge">Ferramenta educacional — custos variam por rota</span>
       <h1 id="headline">Quanto custa de verdade <span class="highlight">pagar no exterior</span>?</h1>
       <p class="subtitle" id="subheadline">Veja o custo conhecido da sua rota e identifique o que ainda precisa ser conferido no app, na fatura ou na cotação antes de decidir.</p>
 
@@ -75,11 +75,11 @@
         <div class="control-grid">
           <div class="control">
             <span class="control-label"><strong>Destino da viagem:</strong></span>
-            <div class="pill-group">
-              <div class="pill-btn pill-destino active" data-destino="asia">🌏 Sudeste Asiático</div>
-              <div class="pill-btn pill-destino" data-destino="europa">🏛️ Europa</div>
-              <div class="pill-btn pill-destino" data-destino="eua">🗽 Estados Unidos</div>
-              <div class="pill-btn pill-destino" data-destino="global">✈️ Outro / Global</div>
+            <div class="choice-list" role="group" aria-label="Destino da viagem">
+              <button type="button" class="choice-row pill-destino" data-destino="asia" aria-pressed="true"><span class="choice-dot"></span><span>Sudeste Asiático</span></button>
+              <button type="button" class="choice-row pill-destino" data-destino="europa" aria-pressed="false"><span class="choice-dot"></span><span>Europa</span></button>
+              <button type="button" class="choice-row pill-destino" data-destino="eua" aria-pressed="false"><span class="choice-dot"></span><span>Estados Unidos</span></button>
+              <button type="button" class="choice-row pill-destino" data-destino="global" aria-pressed="false"><span class="choice-dot"></span><span>Outro / Global</span></button>
             </div>
           </div>
 
@@ -97,10 +97,10 @@
 
           <div class="control">
             <span class="control-label"><strong>Como você costuma pagar no exterior hoje?</strong></span>
-            <div class="pill-group">
-              <div class="pill-btn pill-metodo active" data-metodo="bancao">💳 Cartão de crédito brasileiro</div>
-              <div class="pill-btn pill-metodo" data-metodo="fintech">🌍 Conta global / cartão multimoedas</div>
-              <div class="pill-btn pill-metodo" data-metodo="especie">💵 Casa de câmbio / papel-moeda</div>
+            <div class="choice-list" role="group" aria-label="Como você costuma pagar no exterior hoje">
+              <button type="button" class="choice-row pill-metodo" data-metodo="bancao" aria-pressed="true"><span class="choice-dot"></span><span>Cartão de crédito brasileiro</span></button>
+              <button type="button" class="choice-row pill-metodo" data-metodo="fintech" aria-pressed="false"><span class="choice-dot"></span><span>Conta global / cartão multimoedas</span></button>
+              <button type="button" class="choice-row pill-metodo" data-metodo="especie" aria-pressed="false"><span class="choice-dot"></span><span>Casa de câmbio / papel-moeda</span></button>
             </div>
           </div>
         </div>
@@ -110,13 +110,12 @@
         <h2><span class="num">2</span>Custo conhecido e o que ainda varia</h2>
         <p class="section-desc">A calculadora automatiza apenas componentes que podem ser comparados sem inventar uma tarifa universal. Spread, tarifa do emissor, cotação da casa de câmbio e benefícios precisam ser conferidos na rota real.</p>
 
-        <div class="bleed-highlight-card">
+        <div class="bleed-highlight-card" data-grade="4">
           <div class="bleed-label">Custo conhecido no cenário selecionado</div>
           <div class="bleed-val" id="bleed-val">R$ 350,00</div>
           <div class="stat-label">No cartão de crédito brasileiro, o valor inicial representa apenas o IOF de 3,5%; outros custos não estão presumidos.</div>
 
           <div class="lifestyle-impact-box">
-            <div class="lifestyle-icon">🔎</div>
             <div class="lifestyle-text" id="lifestyle-text">Este é o custo mínimo conhecido. Confira spread, tarifas, cashback e DCC na sua fatura ou no app antes de comparar alternativas.</div>
           </div>
         </div>
@@ -132,12 +131,12 @@
           <tbody>
             <tr>
               <td id="table-metodo-name">Cartão de crédito brasileiro</td>
-              <td id="table-metodo-cost" class="val-bad">R$ 350,00</td>
+              <td id="table-metodo-cost" class="val-bad" data-grade="4">R$ 350,00</td>
               <td id="table-metodo-rate">IOF de 3,5% + spread/tarifas do emissor não incluídos</td>
             </tr>
             <tr>
               <td>ether.fi Cash</td>
-              <td class="val-good">Depende de funding, FX e cashback elegível</td>
+              <td class="val-good" data-grade="1">Depende de funding, FX e cashback elegível</td>
               <td>Cashback atual progressivo de 0,5% a 3%, conforme membership e gasto</td>
             </tr>
           </tbody>
@@ -156,7 +155,7 @@
             <p class="tier-desc">Pode ser uma alternativa para compras elegíveis, mas o resultado depende do custo de funding, FX, membership e cashback disponível. O cashback não é 3% fixo: atualmente varia progressivamente de 3% a 0,5% conforme gasto e nível.</p>
             <div class="tier-gain">Custo líquido: <span id="etherfi-gain">depende do caso</span> · cashback elegível: <span id="etherfi-cashback">0,5%–3%</span></div>
             <a id="cta-etherfi" href="https://www.ether.fi/@e155ee95" class="btn btn-primary btn-block" rel="noopener noreferrer" referrerpolicy="no-referrer">Conferir condições do ether.fi Cash →</a>
-            <small class="browser-alert-note">💡 Link de indicação. Confirme elegibilidade, membership, cashback e custos atuais antes de cadastrar ou pagar.</small>
+            <small class="browser-alert-note">Link de indicação. Confirme elegibilidade, membership, cashback e custos atuais antes de cadastrar ou pagar.</small>
           </div>
 
           <div class="tier-card">
@@ -165,7 +164,7 @@
             <p class="tier-desc">No plano Standard, a ARQ informa tarifa própria de 1% por saque. O saldo Global pode ser formado em USDc/EURc sem IOF brasileiro, com conversão aproximada de 0,5%; a tarifa do operador do ATM e o câmbio até a moeda local ainda podem existir.</p>
 
             <div class="atm-box">
-              <div class="atm-title">🏧 Antes de sacar, compare a rota completa</div>
+              <div class="atm-title">Antes de sacar, compare a rota completa</div>
               <div class="atm-grid">
                 <div class="atm-stat">
                   <div class="atm-stat-val">Cartão bancário</div>
@@ -176,18 +175,18 @@
                   <div class="atm-stat-label">Franquias, IOF e tarifas variam pela rota/plano. Confira a prévia.</div>
                 </div>
                 <div class="atm-stat">
-                  <div class="atm-stat-val val-good">ARQ Standard</div>
+                  <div class="atm-stat-val val-good" data-grade="1">ARQ Standard</div>
                   <div class="atm-stat-label">1% de tarifa própria por saque; taxa do ATM terceiro pode ser cobrada.</div>
                 </div>
               </div>
             </div>
 
-            <small class="browser-alert-note">⚠️ Quando o ATM oferecer conversão própria (DCC), compare a cotação e prefira a cobrança em moeda local quando essa for a opção adequada. Não tratamos um percentual de perda como universal.</small>
+            <small class="browser-alert-note">Quando o ATM oferecer conversão própria (DCC), compare a cotação e prefira a cobrança em moeda local quando essa for a opção adequada. Não tratamos um percentual de perda como universal.</small>
 
             <div class="btn-row">
               <a id="cta-arq" href="https://www.arqfinance.com/referrals/general?referralCode=tiagohyd_h6L&amp;pid=referral&amp;c=general&amp;is_retargeting=true" class="btn btn-secondary btn-block" rel="noopener noreferrer" referrerpolicy="no-referrer">Conferir Cartão ARQ Global →</a>
             </div>
-            <a class="atm-link" href="https://dlt.academy/blog/arq-saques-exterior/" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">📖 Ler a comparação completa de saques →</a>
+            <a class="atm-link" href="https://dlt.academy/blog/arq-saques-exterior/" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">Ler a comparação completa de saques →</a>
           </div>
 
           <div class="tier-card">

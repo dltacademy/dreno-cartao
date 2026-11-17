@@ -86,8 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   destinoPills.forEach(pill => {
     pill.addEventListener("click", () => {
-      destinoPills.forEach(p => p.classList.remove("active"));
-      pill.classList.add("active");
+      destinoPills.forEach(p => p.setAttribute("aria-pressed", String(p === pill)));
       state.destino = pill.dataset.destino;
       recalculate();
       // O evento registra só que o filtro foi usado, nunca qual destino a pessoa escolheu.
@@ -97,8 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   metodoPills.forEach(pill => {
     pill.addEventListener("click", () => {
-      metodoPills.forEach(p => p.classList.remove("active"));
-      pill.classList.add("active");
+      metodoPills.forEach(p => p.setAttribute("aria-pressed", String(p === pill)));
       state.metodo = pill.dataset.metodo;
       recalculate();
       // Idem: sem o método escolhido no nome do evento.
