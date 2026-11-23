@@ -17,7 +17,7 @@
   font-family: var(--font-head);
   font-weight: 700;
   color: var(--text-dim);
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 .currency-field {
@@ -25,7 +25,7 @@
   border: none;
   color: var(--text);
   font-family: var(--font-head);
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 700;
   width: 100%;
   outline: none;
@@ -43,7 +43,7 @@
 
 .bleed-val {
   font-family: var(--font-head);
-  font-size: clamp(32px, 6vw, 46px);
+  font-size: clamp(2rem, 6vw, 2.875rem);
   font-weight: 800;
   color: var(--grade-fg, var(--red));
   font-variant-numeric: tabular-nums;
@@ -53,7 +53,7 @@
 }
 
 .bleed-label {
-  font-size: 14.5px;
+  font-size: 0.9062rem;
   color: var(--text-dim);
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -66,7 +66,7 @@
 }
 
 .lifestyle-text {
-  font-size: 15px;
+  font-size: 0.9375rem;
   color: var(--text);
   line-height: 1.55;
 }
@@ -95,7 +95,7 @@
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -110,28 +110,28 @@
 
 .tier-title {
   font-family: var(--font-head);
-  font-size: 17px;
+  font-size: 1.0625rem;
   font-weight: 700;
   margin: 0 0 6px;
   color: var(--text);
 }
 
 .tier-desc {
-  font-size: 15px;
+  font-size: 0.9375rem;
   color: var(--text-dim);
   margin: 0 0 14px;
   line-height: 1.5;
 }
 
 .tier-gain {
-  font-size: 15px;
+  font-size: 0.9375rem;
   font-weight: 700;
   color: var(--text);
   margin-bottom: 12px;
 }
 
 .browser-alert-note {
-  font-size: 15px;
+  font-size: 0.9375rem;
   color: var(--text-dim);
   border-left: 3px solid var(--amber);
   padding: 2px 0 2px 12px;
@@ -149,7 +149,7 @@
   width: 100%;
   border-collapse: collapse;
   margin-top: 14px;
-  font-size: 15px;
+  font-size: 0.9375rem;
 }
 
 .breakdown-table th, .breakdown-table td {
@@ -179,7 +179,7 @@
 }
 
 .atm-title {
-  font-size: 15px;
+  font-size: 0.9375rem;
   font-weight: 700;
   color: var(--text);
   margin-bottom: 8px;
@@ -203,13 +203,13 @@
 
 .atm-stat-val {
   font-family: var(--font-head);
-  font-size: 15px;
+  font-size: 0.9375rem;
   font-weight: 700;
 }
 .atm-stat-val[data-grade] { color: var(--grade-fg); }
 
 .atm-stat-label {
-  font-size: 13px;
+  font-size: 0.8125rem;
   color: var(--text-dim);
   margin-top: 2px;
 }
@@ -218,7 +218,7 @@
   display: inline-flex;
   align-items: center;
   min-height: 44px;
-  font-size: 15px;
+  font-size: 0.9375rem;
   margin-top: 8px;
   color: var(--sky-light);
 }
